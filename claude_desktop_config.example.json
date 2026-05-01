@@ -1,0 +1,24 @@
+{
+  "_comment": "Add this to your claude_desktop_config.json under 'mcpServers'",
+
+  "mcpServers": {
+    "research-synthesis": {
+      "_comment_local": "Option A — Run directly with Node (after `npm run build`)",
+      "command": "node",
+      "args": ["/absolute/path/to/research-synthesis-mcp/dist/index.js"],
+      "env": {
+        "OPENALEX_EMAIL": "your@email.com"
+      }
+    },
+
+    "research-synthesis-docker": {
+      "_comment_docker": "Option B — Run via Docker",
+      "command": "docker",
+      "args": [
+        "run", "--rm", "-i",
+        "-e", "OPENALEX_EMAIL=your@email.com",
+        "research-synthesis-mcp"
+      ]
+    }
+  }
+}
